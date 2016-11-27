@@ -1,0 +1,34 @@
+<?php
+/**
+ * @category    Grafikentwicklung
+ * @package     Tracking
+ * @author      Grafik, Entwicklung & IT Service <info@pierrearlt.com>
+ * @date        21.11.2016
+ * @license     https://github.com/parlt/Grafikentwicklung_Tracking/blob/master/LICENSE The MIT License (MIT)
+ */
+
+/**
+ * @var Grafikentwicklung_Tracking_Block_TagManager_DataLayer $this ;
+ */
+?>
+<?php
+if ($this->getHelper()->canUseTagManager()) { ?>
+    <!-- Tag Manager Tracking (datalayer) Begin -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            <?php if ($this->getHelper()->canUseTagManagerOnCheckoutSuccessPage()){
+            $trackingData = $this->getTagManagerSalesTrackingData();
+            ?>
+            'event': '<?php echo $this->getHelper()->getTagManagerOrderCompletedEventName()?>',
+            'transactionId': '<?php echo $trackingData['transactionId'];?>',
+            /*  'transactionAffiliation': 'Acme',*/
+            'transactionTotal': <?php echo $trackingData['transactionTotal'];?>,
+            'transactionTax': <?php echo $trackingData['transactionTax'];?>,
+            'transactionShipping': <?php echo $trackingData['transactionShipping'];?>,
+            'transactionProducts': <?php echo $trackingData['transactionProducts'];?>
+            <?php }?>
+        });
+    </script>
+    <!-- Tag Manager Tracking (datalayer) End-->
+<?php } ?>

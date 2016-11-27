@@ -1,0 +1,627 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <grafikentwicklung translate="label" module="grafikentwicklung_tracking">
+            <label>Grafikentwicklung</label>
+            <sort_order>99999</sort_order>
+
+        </grafikentwicklung>
+    </tabs>
+    <sections>
+        <grafikentwicklung_tracking translate="label" module="grafikentwicklung_tracking">
+            <label>Grafikentwicklung Tracking</label>
+            <tab>grafikentwicklung</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <excludes translate="label">
+                    <label>Excludes</label>
+                    <tab>grafikentwicklung</tab>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <comment>
+                        Exclude your dev, staging beta etc. domains from tracking tagmaanger, shopzilla etc. tracking.
+                        For example disables the Tagmanger datalayer.
+                    </comment>
+                    <fields>
+                        <enabled translate='label'>
+                            <label>Enable Domain Excludes</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>560</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                                Disable tracking for domains in the field below.
+                            </comment>
+                        </enabled>
+                        <domains_list translate='label'>
+                            <label>Domains</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>570</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                                Exclude domains tracking (don't track them), for example: dev.your-domain.com,
+                                beta.your-domain.com.
+                                Seperate multiple domains with comma.
+                            </comment>
+                        </domains_list>
+                    </fields>
+                </excludes>
+                <debug translate="label">
+                    <label>Debug</label>
+                    <tab>grafikentwicklung</tab>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <comment>
+                        Enable checkout success page debugging.
+                    </comment>
+                    <fields>
+                        <checkout_success_debug_enabled translate='label'>
+                            <label>Enable Checkout Success Debug</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>580</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                                When enabled, you can reload and debug the order success page without redirect to cart
+                                or empty cart page.
+                                Clearing the order from session will be disabled.
+                            </comment>
+                        </checkout_success_debug_enabled>
+                    </fields>
+                </debug>
+                <tagmanger translate="label">
+                    <label>Tagmager</label>
+                    <tab>grafikentwicklung</tab>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>11</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>
+                        Enable Google Tag Manger and the datalayers for remarketing, order complete, categories.
+                    </comment>
+                    <fields>
+                        <enabled translate='label'>
+                            <label>Enable Tagmanger</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>560</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                When enabled we include the Tag Manger Code.
+                            </comment>
+                        </enabled>
+                        <container_id translate='label'>
+                            <label>Container ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>570</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Tag Manger Container Id, can be different per website and store.
+                            </comment>
+                        </container_id>
+                        <order_completed_event_name translate='label'>
+                            <label>Order Completed Event Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>580</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Your order completed or success name, need to be defined in your Google Tag Manger
+                                container.
+                            </comment>
+                        </order_completed_event_name>
+                    </fields>
+                </tagmanger>
+                <moebel_de translate="label">
+                    <label>Möbel.de Tracking</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>12</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>
+                        Enable Möbel.de order complete transaction communication.
+                    </comment>
+                    <fields>
+                        <enabled translate='label'>
+                            <label>Enable Möbel.de</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>560</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                When enabled we include the Moebel.de transaction code (_umsatz, _versandkosten,
+                                _artikelliste).
+                            </comment>
+                        </enabled>
+                        <tracking_key translate='label'>
+                            <label>Tracking Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>570</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Your Möbel.de tracking key.
+                            </comment>
+                        </tracking_key>
+                    </fields>
+                </moebel_de>
+                <shopzilla translate="label">
+                    <label>Shopzilla Tracking</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>13</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>
+                        Enable Shopzilla order complete transaction communication.
+                    </comment>
+                    <fields>
+                        <enabled translate='label'>
+                            <label>Enable Shopzilla</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>560</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                When enabled we include the Shopzilla transaction code (cust_type, order_value,
+                                order_id, units_ordered).
+                            </comment>
+                        </enabled>
+                        <merchant_id translate='label'>
+                            <label>Merchant id</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>570</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Your Shopzilla merchant id.
+                            </comment>
+                        </merchant_id>
+                    </fields>
+                </shopzilla>
+                <sales_tracking translate="label">
+                    <label>Sales Tracking (in log file and / or per mail)</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>14</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <comment>
+                        Enable Sales tracking, track the portal by a referer in your product feeds.
+                        If a customer completes a order you can get a cpc overview.
+                        Store information's in a log file and / or send per mail.
+                    </comment>
+                    <fields>
+                        <enabled translate='label'>
+                            <label>Enable logging</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                                When enabled we track sales by portal.
+                            </comment>
+                        </enabled>
+                        <log_file_enabled translate='label'>
+                            <label>Enable Logfile</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                                When enabled we write a logfile.
+                            </comment>
+                        </log_file_enabled>
+                        <log_file_name translate='label'>
+                            <label>Logfile name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>s
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                                Sales tracking logfile name, will be created in magento root/var/log.
+                                For example "salestracking.log".
+                            </comment>
+                        </log_file_name>
+
+                        <send_mail_enabled translate='label'>
+                            <label>Enable Send Mail</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                                When enabled we send a mail for every sale to the mail (to, cc) addess below.
+                            </comment>
+                        </send_mail_enabled>
+
+                        <!--<mail_template translate="label">
+                           <label>Email Template</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_email_template</source_model>
+                           <sort_order>40</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>1</show_in_website>
+                           <show_in_store>1</show_in_store>
+                       </mail_template>-->
+
+                       <mail_from_mailaddress translate='label'>
+                           <label>Mail from (Mailaddress)</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_email_identity</source_model>
+                           <sort_order>50</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>s
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               For example admin@your-domain.com.
+                           </comment>
+                       </mail_from_mailaddress>
+
+                       <mail_subject translate='label'>
+                           <label>Mail Subject</label>
+                           <frontend_type>text</frontend_type>
+                           <sort_order>60</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>s
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               For example "TrackingData".
+                           </comment>
+                       </mail_subject>
+
+                       <mail_to_mailaddress translate='label'>
+                           <label>Mail to (Mailaddress)</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_email_identity</source_model>
+                           <sort_order>70</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               For example admin@your-domain.com.
+                           </comment>
+                       </mail_to_mailaddress>
+
+                       <!--<mail_cc_mailaddress translate='label'>
+                           <label>Mail to CC (Mailaddress)</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_email_identity</source_model>
+                           <sort_order>80</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>s
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               For example info@your-domain.com.
+                           </comment>
+                       </mail_cc_mailaddress>-->
+
+                       <billiger_enabled translate='label'>
+                           <label>Enable Billiger.de</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_yesno</source_model>
+                           <sort_order>90</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               Enable sales tracking for billiger.de.
+                           </comment>
+                       </billiger_enabled>
+
+                       <billiger_referer translate='label'>
+                           <label>Billiger.de referer</label>
+                           <frontend_type>text</frontend_type>
+                           <sort_order>100</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>s
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               For example "billiger" you billiger.de product link urls
+                               - in - your feed should have in
+                               this example an additional get param "?referer=billiger".
+                           </comment>
+                       </billiger_referer>
+
+                       <google_enabled translate='label'>
+                           <label>Enable Google</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_yesno</source_model>
+                           <sort_order>120</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               Enable sales tracking for google shopping / merchant.
+                           </comment>
+                       </google_enabled>
+
+                       <google_referer translate='label'>
+                           <label>Google referer</label>
+                           <frontend_type>text</frontend_type>
+                           <sort_order>130</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               For example "google" you google product link urls
+                               - in - your google shopping /merchant
+                               feed should have in
+                               this example an additional get param "?referer=google".
+                           </comment>
+                       </google_referer>
+
+                       <moebel_enabled translate='label'>
+                           <label>Enable Möbel.de</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_yesno</source_model>
+                           <sort_order>140</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               Enable sales tracking for Möbel.de.
+                           </comment>
+                       </moebel_enabled>
+
+                       <moebel_referer translate='label'>
+                           <label>Möbel.de referer</label>
+                           <frontend_type>text</frontend_type>
+                           <sort_order>150</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               For example "moebel" you möbel.de product link urls
+                               - in - your feed should have in
+                               this example an additional get param "?referer=moebel".
+                           </comment>
+                       </moebel_referer>
+
+                       <preisroboter_enabled translate='label'>
+                           <label>Enable Preisroboter</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_yesno</source_model>
+                           <sort_order>160</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               Enable sales tracking for Preisroboter.
+                           </comment>
+                       </preisroboter_enabled>
+
+                       <preisroboter_referer translate='label'>
+                           <label>Preisroboter referer</label>
+                           <frontend_type>text</frontend_type>
+                           <sort_order>170</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               For example "preisroboter" you preisroboter.de product link urls
+                               - in - your feed should have in
+                               this example an additional get param "?referer=preisroboter".
+                           </comment>
+                       </preisroboter_referer>
+
+                       <shopwahl_enabled translate='label'>
+                           <label>Enable Shopwahl (leGuide)</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_yesno</source_model>
+                           <sort_order>180</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               Enable sales tracking for Shopwahl (leGuide).
+                           </comment>
+                       </shopwahl_enabled>
+
+                       <shopwahl_referer translate='label'>
+                           <label>Shopwahl referer</label>
+                           <frontend_type>text</frontend_type>
+                           <sort_order>190</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               For example "shopwahl" you shopwahl product link urls
+                               - in - your feed should have in
+                               this example an additional get param "?referer=shopwahl".
+                           </comment>
+                       </shopwahl_referer>
+
+                       <shopzilla_enabled translate='label'>
+                           <label>Enable Shopzilla</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_yesno</source_model>
+                           <sort_order>200</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               Enable sales tracking for Shopzilla.
+                           </comment>
+                       </shopzilla_enabled>
+
+                       <shopzilla_referer translate='label'>
+                           <label>Shopzilla referer</label>
+                           <frontend_type>text</frontend_type>
+                           <sort_order>210</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               For example "shopzilla" you shopzilla product link urls
+                               - in - your feed should have in
+                               this example an additional get param "?referer=shopzilla".
+                           </comment>
+                       </shopzilla_referer>
+                   </fields>
+               </sales_tracking>
+
+               <emty_cart_tracking translate="label">
+                   <label>Empty cart tracking (in log file and / or per mail)</label>
+                   <frontend_type>text</frontend_type>
+                   <sort_order>15</sort_order>
+                   <show_in_default>1</show_in_default>
+                   <show_in_website>0</show_in_website>
+                   <show_in_store>0</show_in_store>
+                   <comment>
+                       Enable Empty cart tracking, if you have empty carts, what are the requested urls / useractivity
+                       and customer session informations's Store information's in a log file and / or send per mail.
+                   </comment>
+                   <fields>
+                       <enabled translate='label'>
+                           <label>Enable logging</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_yesno</source_model>
+                           <sort_order>10</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               When enabled we log the useractivity and requested urls in the database.
+                           </comment>
+                       </enabled>
+                       <log_file_enabled translate='label'>
+                           <label>Enable Logfile</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_yesno</source_model>
+                           <sort_order>15</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               When enabled we write a logfile.
+                           </comment>
+                       </log_file_enabled>
+                       <log_file_name translate='label'>
+                           <label>Logfile name</label>
+                           <frontend_type>text</frontend_type>
+                           <sort_order>20</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>s
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               Empty cart tracking logfile name, will be created in magento root/var/log.
+                               For example "emptycart.log".
+                           </comment>
+                       </log_file_name>
+
+                       <send_mail_enabled translate='label'>
+                           <label>Enable Send Mail</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_yesno</source_model>
+                           <sort_order>30</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>0</show_in_website>
+                           <show_in_store>0</show_in_store>
+                           <comment>
+                               When enabled we send a mail for empty cart situation.
+                           </comment>
+                       </send_mail_enabled>
+
+                       <!--<mail_template translate="label">
+                           <label>Email Template</label>
+                           <frontend_type>select</frontend_type>
+                           <source_model>adminhtml/system_config_source_email_template</source_model>
+                           <sort_order>40</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>1</show_in_website>
+                           <show_in_store>1</show_in_store>
+                       </mail_template>-->
+
+                        <mail_from_mailaddress translate='label'>
+                            <label>Mail from (Mailaddress)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_identity</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>s
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                                For example admin@your-domain.com.
+                            </comment>
+                        </mail_from_mailaddress>
+
+                        <mail_subject translate='label'>
+                            <label>Mail Subject</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>s
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                                For example "Empty Cart".
+                            </comment>
+                        </mail_subject>
+
+                        <mail_to_mailaddress translate='label'>
+                            <label>Mail to (Mailaddress)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_identity</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>s
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                                For example admin@your-domain.com.
+                            </comment>
+                        </mail_to_mailaddress>
+
+                        <!--<mail_cc_mailaddress translate='label'>
+                            <label>Mail to CC (Mailaddress)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_identity</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>s
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                                For example info@your-domain.com.
+                            </comment>
+                        </mail_cc_mailaddress>-->
+                    </fields>
+                </emty_cart_tracking>
+            </groups>
+        </grafikentwicklung_tracking>
+    </sections>
+</config>

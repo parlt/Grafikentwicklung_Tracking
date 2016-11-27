@@ -1,0 +1,33 @@
+<?php
+/**
+ * @category    Grafikentwicklung
+ * @package     Tracking
+ * @author      Grafik, Entwicklung & IT Service <info@pierrearlt.com>
+ * @date        21.11.2016
+ * @license     https://github.com/parlt/Grafikentwicklung_Tracking/blob/master/LICENSE The MIT License (MIT)
+ */
+
+/**
+ * @var Grafikentwicklung_Tracking_Block_MoebelDe_Body $this
+ */
+?>
+<?php if ($this->getHelper()->canUseMoebelDeTracking()) {
+    $tackingData = $this->getMoebelDeSalesTrackingData(); ?>
+    <!-- Moebel.de Tracking Begin-->
+    <script type="text/javascript">
+        var _mo = _mo || [];
+        _mo.push(['_key', '<?php echo $this->getHelper()->getMoebelDeTrackingKey();?>']);
+        _mo.push(['_umsatz', '<?php echo $tackingData['_umsatz'];?>']);
+        _mo.push(['_versandkosten', '<?php echo $tackingData['_versandkosten'];?>']);
+        _mo.push(['_artikelliste', '<?php echo $tackingData['_artikelliste'];?>']);
+        (function () {
+            var mo = document.createElement('script');
+            mo.type = 'text/javascript';
+            mo.async = true;
+            mo.src = 'https://sales1.moebel.de/asyndic.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(mo, s);
+        })();
+    </script>
+    <!-- Moebel.de Tracking End-->
+<?php } ?>

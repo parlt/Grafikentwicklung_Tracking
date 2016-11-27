@@ -1,0 +1,24 @@
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <tracking translate="title" module="grafikentwicklung_tracking">
+                    <title>Sales and Empty Cart Tracking</title>
+                    <sort_order>3</sort_order>
+                    <children>
+                        <salestracking translate="title" module="grafikentwicklung_tracking">
+                            <title>Sales Tracking by Portal</title>
+                            <sort_order>3</sort_order>
+                            <action>adminhtml/salestracking/index</action>
+                        </salestracking>
+                        <emptycarttracking translate="title" module="grafikentwicklung_tracking">
+                            <title>Empty Cart Tracking</title>
+                            <sort_order>4</sort_order>
+                            <action>adminhtml/emptycarttracking/index</action>
+                        </emptycarttracking>
+                    </children>
+                </tracking>
+            </children>
+        </catalog>
+    </menu>
+</config>

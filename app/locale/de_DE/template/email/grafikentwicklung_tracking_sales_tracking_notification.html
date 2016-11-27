@@ -1,0 +1,154 @@
+<!--@vars
+{
+    "var store_code":"store code",
+    "var transaction_id":"transaction_id",
+    "var transaction_tax":"transaction_tax",
+    "var transaction_total":"transaction_total",
+    "var transaction_shipping":"transaction_shipping",
+    "var transaction_currency":"transaction_currency",
+    "var transaction_units_ordered":"transaction_units_ordered",
+    "var transaction_product_list_sku":"transaction_product_list_sku",
+    "var transaction_is_new_customer":"transaction_is_new_customer",
+    "var session_id":"session_id",
+    "var shopping_portal":"shopping_portal",
+    "var created_time":"created_time",
+    "var update_time":"update_time",
+}
+@-->
+
+<!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+
+<body style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<div style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+    <table cellspacing="0" cellpadding="0" border="0" height="100%" width="100%">
+        <tr>
+            <td align="center" valign="top" style="padding:20px 0 20px 0">
+                <!-- [ header starts here] -->
+                <table bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="0" width="1200"
+                       style="border:1px solid #E0E0E0;">
+                    <tr>
+                        <td valign="top"><a href="{{store url=""}}">
+                            <img src="{{var logo_url}}" alt="{{var logo_alt}}" style="margin-bottom:10px;" border="0"/>
+                            </a>
+                        </td>
+                    </tr>
+                    <!-- [ middle starts here] -->
+                    <tr>
+                        <td valign="top">
+                            <table  bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="1"  >
+                                <tr>
+                                    <td>
+                                        Bestellnummer
+                                    </td>
+                                    <td>
+                                        {{var transaction_id}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Shopping Portal
+                                    </td>
+                                    <td>
+                                        {{var shopping_portal}}
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        Store
+                                    </td>
+                                    <td>
+                                        {{var store_code}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Session Id
+                                    </td>
+                                    <td>
+                                        {{var session_id}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Total
+                                    </td>
+                                    <td>
+                                        {{var transaction_total}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Versand
+                                    </td>
+                                    <td>
+                                        {{var transaction_shipping}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Steuer
+                                    </td>
+                                    <td>
+                                        {{var transaction_tax}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Währung
+                                    </td>
+                                    <td>
+                                        {{var transaction_currency}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Anzahl Artikel
+                                    </td>
+                                    <td>
+                                        {{var transaction_units_ordered}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Skus Artikel
+                                    </td>
+                                    <td>
+                                        {{var transaction_product_list_sku}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Ist Neukunde
+                                    </td>
+                                    <td>
+                                        {{var transaction_is_new_customer}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Erstellt am
+                                    </td>
+                                    <td>
+                                        {{var created_time}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        letztes Update
+                                    </td>
+                                    <td>
+                                        {{var update_time}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>

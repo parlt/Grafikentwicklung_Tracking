@@ -1,0 +1,181 @@
+<!--@subject Leerer Warenkorb @-->
+<!--@vars
+{
+    "var cookie_domain":"cookie_domain",
+    "var cookie_lifetime":"cookie_lifetime",
+    "var created_time":"created_time,
+    "var is_accessing_cart":"is_accessing_cart",
+    "var is_empty_cart":"is_empty_cart",
+    "var session_http_user_agent":"session_http_user_agent",
+    "var session_http_via":"session_http_via",
+    "var session_http_x_forwarded_for":"session_http_x_forwarded_for",
+    "var session_id":"session_id",
+    "var session_messages_collection":"session_messages_collection",
+    "var session_name":"session_name",
+    "var session_remote_address":"session_remote_address",
+    "var session_requested_urls":"session_requested_urls",
+    "var session_validator_data":"session_validator_data",
+    "var store_code":"store_code",
+    "var update_time":"update_time"
+}
+@-->
+
+<!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+
+<body style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<div style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+    <table cellspacing="0" cellpadding="0" border="0" height="100%" width="100%">
+        <tr>
+            <td align="center" valign="top" style="padding:20px 0 20px 0">
+                <!-- [ header starts here] -->
+                <table bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="0" width="1200"
+                       style="border:1px solid #E0E0E0;">
+                    <tr>
+                        <td valign="top"><a href="{{store url=""}}">
+                            <img src="{{var logo_url}}" alt="{{var logo_alt}}" style="margin-bottom:10px;" border="0"/>
+                            </a>
+                        </td>
+                    </tr>
+                    <!-- [ middle starts here] -->
+                    <tr>
+                        <td valign="top">
+                            <table  bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="1"  >
+                                <tr>
+                                    <td>
+                                        Leerer Warenkorb
+                                    </td>
+                                    <td>
+                                        {{var is_empty_cart}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       Hat Warenkorb Seite offen gehabt
+                                    </td>
+                                    <td>
+                                        {{var is_accessing_cart}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Store
+                                    </td>
+                                    <td>
+                                        {{var store_code}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Session Id
+                                    </td>
+                                    <td>
+                                        {{var session_id}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Session name
+                                    </td>
+                                    <td>
+                                        {{var session_name}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Cookie domain
+                                    </td>
+                                    <td>
+                                        {{var cookie_domain}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Cookie lifetime
+                                    </td>
+                                    <td>
+                                        {{var cookie_lifetime}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Remote address
+                                    </td>
+                                    <td>
+                                        {{var session_remote_address}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Http via
+                                    </td>
+                                    <td>
+                                        {{var session_http_via}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        X forwarded for
+                                    </td>
+                                    <td>
+                                        {{var session_http_x_forwarded_for}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        User agent
+                                    </td>
+                                    <td>
+                                        {{var session_http_user_agent}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Messages collection
+                                    </td>
+                                    <td>
+                                        {{var session_messages_collection}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Validator data
+                                    </td>
+                                    <td>
+                                        {{var session_validator_data}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Besuchte Seiten
+                                    </td>
+                                    <td>
+                                        {{var session_requested_urls}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       Erstellt am
+                                    </td>
+                                    <td>
+                                        {{var created_time}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      letztes Update
+                                    </td>
+                                    <td>
+                                        {{var update_time}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>

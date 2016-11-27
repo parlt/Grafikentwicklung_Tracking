@@ -1,0 +1,12 @@
+app/code/community/Grafikentwicklung/Tracking                                                   app/code/community/Grafikentwicklung/Tracking
+
+app/design/frontend/base/default/layout/grafikentwicklung/tracking/                             app/design/frontend/base/default/layout/grafikentwicklung/tracking/
+app/design/frontend/base/default/template/grafikentwicklung/tracking/                           app/design/frontend/base/default/template/grafikentwicklung/tracking/
+
+app/etc/modules/Grafikentwicklung_Tracking.xml                                                  app/etc/modules/Grafikentwicklung_Tracking.xml
+
+app/locale/de_DE/template/email/grafikentwicklung_tracking_empty_cart_notification.html         app/locale/de_DE/template/email/grafikentwicklung_tracking_empty_cart_notification.html
+app/locale/de_DE/template/email/grafikentwicklung_tracking_sales_tracking_notification.html     app/locale/de_DE/template/email/grafikentwicklung_tracking_sales_tracking_notification.html
+
+app/locale/en_US/template/email/grafikentwicklung_tracking_empty_cart_notification.html         app/locale/en_US/template/email/grafikentwicklung_tracking_empty_cart_notification.html
+app/locale/en_US/template/email/grafikentwicklung_tracking_sales_tracking_notification.html     app/locale/en_US/template/email/grafikentwicklung_tracking_sales_tracking_notification.html

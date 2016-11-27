@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <default>
+        <reference name="head">
+            <block type="core/text_list" name="before_head_end"  as="before_head_end"/>
+            <action method="unsetChild" ifconfig="grafikentwicklung_tracking/tagmanger/enabled">
+                <name>google_analytics</name>
+            </action>
+        </reference>
+        <reference name="before_head_end">
+            <block type="grafikentwicklung_tracking/tagManager_head" as="grafikentwicklung_tracking/tagManagerHead"/>
+        </reference>
+        <reference name="after_body_start">
+            <action method="unsetChild" ifconfig="grafikentwicklung_tracking/tagmanger/enabled">
+                <name>google_analytics</name>
+            </action>
+            <block type="grafikentwicklung_tracking/tagManager_body" as="grafikentwicklung_tracking/tagManagerBody"/>
+        </reference>
+        <reference name="before_body_end">
+            <action method="unsetChild" ifconfig="grafikentwicklung_tracking/tagmanger/enabled">
+                <name>google_analytics</name>
+            </action>
+            <block type="grafikentwicklung_tracking/Shopzilla_Body" as="grafikentwicklung_tracking/shopzillaBody"/>
+            <block type="grafikentwicklung_tracking/Moebelde_Body" as="grafikentwicklung_tracking/moebeldeBody"/>
+            <block type="grafikentwicklung_tracking/tagManager_DataLayer" as="grafikentwicklung_tracking/tagManagerDataLayer"/>
+        </reference>
+    </default>
+
+</layout>
