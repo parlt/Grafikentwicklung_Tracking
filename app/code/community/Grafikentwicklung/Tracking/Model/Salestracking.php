@@ -66,7 +66,13 @@ class Grafikentwicklung_Tracking_Model_Salestracking extends Grafikentwicklung_T
      */
     private function getShoppingPortal()
     {
-        return $this->getData('shopping_portal');
+        $portal = $this->getData('shopping_portal');
+
+        if (empty($portal)){
+            return 'default';
+        }
+
+        return $portal;
     }
 
 
@@ -111,7 +117,8 @@ class Grafikentwicklung_Tracking_Model_Salestracking extends Grafikentwicklung_T
         $data = $this->getDataForMail();
 
         $subject = $this->getTrackingHelper()->getSalesTrackingSendMailSubject();
-        $subject = $subject . ' | ' . $this->getData('shopping_portal');
+
+        $subject = $subject . ' | ' . $this->getShoppingPortal();
         $fromMail = $this->getTrackingHelper()->getSalesTrackingSendMailFromMailAddress();
         $toMail = $this->getTrackingHelper()->getSalesTrackingSendMailToMailAddress();
 
