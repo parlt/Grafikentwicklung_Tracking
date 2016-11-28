@@ -21,7 +21,7 @@ class Grafikentwicklung_Tracking_Block_Common_Abstract extends Mage_Core_Block_T
     /**
      * @return Grafikentwicklung_Tracking_Helper_Data
      */
-    public function getHelper()
+    public function getTrackingHelper()
     {
         return Mage::helper('grafikentwicklung_tracking');
     }
@@ -34,7 +34,7 @@ class Grafikentwicklung_Tracking_Block_Common_Abstract extends Mage_Core_Block_T
     {
         if ($this->model === null) {
             /** @var Grafikentwicklung_Tracking_Model_Salestracking $model */
-            $model = $this->getHelper()->getSalesTrackingModelBySessionId();
+            $model = $this->getTrackingHelper()->getSalesTrackingModelBySessionId();
             if ($model) {
                 $model->getLoggedDataBySession();
                 $this->model = $model;

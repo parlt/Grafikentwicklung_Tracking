@@ -145,7 +145,7 @@ class Grafikentwicklung_Tracking_Helper_Config_Data extends Mage_Core_Helper_Abs
     public function getSalesTrackingLogFileName()
     {
         $value = Mage::getStoreConfig('grafikentwicklung_tracking/sales_tracking/log_file_name');
-        return (bool)$value;
+        return $value;
     }
 
 
