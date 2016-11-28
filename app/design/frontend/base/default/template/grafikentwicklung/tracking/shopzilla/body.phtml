@@ -11,11 +11,11 @@
  * @var Grafikentwicklung_Tracking_Block_Shopzilla_Body $this
  */
 ?>
-<?php if ($this->getHelper()->canUseShopZillaTracking()) {
+<?php if ($this->getTrackingHelper()->canUseShopZillaTracking()) {
     $tackingData = $this->getShopZillaSalesTrackingData(); ?>
     <!-- Shopzilla Tracking Begin-->
     <script language="javascript">
-        var mid = '<?php echo $this->getHelper()->getShopZillaMerchantId();?>';
+        var mid = '<?php echo $this->getTrackingHelper()->getShopZillaMerchantId();?>';
         var cust_type = '<?php echo $tackingData['cust_type']; ?>';
         var order_value = '<?php echo $tackingData['order_value'];?>';
         var order_id = '<?php echo $tackingData['order_id'];?>';

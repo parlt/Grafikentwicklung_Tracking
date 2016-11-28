@@ -11,12 +11,12 @@
  * @var Grafikentwicklung_Tracking_Block_MoebelDe_Body $this
  */
 ?>
-<?php if ($this->getHelper()->canUseMoebelDeTracking()) {
+<?php if ($this->getTrackingHelper()->canUseMoebelDeTracking()) {
     $tackingData = $this->getMoebelDeSalesTrackingData(); ?>
     <!-- Moebel.de Tracking Begin-->
     <script type="text/javascript">
         var _mo = _mo || [];
-        _mo.push(['_key', '<?php echo $this->getHelper()->getMoebelDeTrackingKey();?>']);
+        _mo.push(['_key', '<?php echo $this->getTrackingHelper()->getMoebelDeTrackingKey();?>']);
         _mo.push(['_umsatz', '<?php echo $tackingData['_umsatz'];?>']);
         _mo.push(['_versandkosten', '<?php echo $tackingData['_versandkosten'];?>']);
         _mo.push(['_artikelliste', '<?php echo $tackingData['_artikelliste'];?>']);

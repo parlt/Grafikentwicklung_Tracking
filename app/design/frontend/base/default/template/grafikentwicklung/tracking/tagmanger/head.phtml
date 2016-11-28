@@ -11,7 +11,7 @@
  * @var Grafikentwicklung_Tracking_Block_TagManager_Head $this ;
  */
 ?>
-<?php if ($this->getHelper()->canUseTagManager()) { ?>
+<?php if ($this->getTrackingHelper()->canUseTagManager()) { ?>
     <!-- Tag Manager Tracking (head) Begin -->
     <script>
         (function (w, d, s, l, i) {
@@ -22,7 +22,7 @@
             j.async = true;
             j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', '<?php echo $this->getHelper()->getTagMangerContainerId();?>');
+        })(window, document, 'script', 'dataLayer', '<?php echo $this->getTrackingHelper()->getTagMangerContainerId();?>');
     </script>
     <!-- Tag Manager Tracking (head) End-->
 <?php } ?>

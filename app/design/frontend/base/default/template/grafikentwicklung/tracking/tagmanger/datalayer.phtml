@@ -12,15 +12,15 @@
  */
 ?>
 <?php
-if ($this->getHelper()->canUseTagManager()) { ?>
+if ($this->getTrackingHelper()->canUseTagManager()) { ?>
     <!-- Tag Manager Tracking (datalayer) Begin -->
     <script>
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
-            <?php if ($this->getHelper()->canUseTagManagerOnCheckoutSuccessPage()){
+            <?php if ($this->getTrackingHelper()->canUseTagManagerOnCheckoutSuccessPage()){
             $trackingData = $this->getTagManagerSalesTrackingData();
             ?>
-            'event': '<?php echo $this->getHelper()->getTagManagerOrderCompletedEventName()?>',
+            'event': '<?php echo $this->getTrackingHelper()->getTagManagerOrderCompletedEventName()?>',
             'transactionId': '<?php echo $trackingData['transactionId'];?>',
             /*  'transactionAffiliation': 'Acme',*/
             'transactionTotal': <?php echo $trackingData['transactionTotal'];?>,
