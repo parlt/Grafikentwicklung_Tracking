@@ -124,7 +124,7 @@ class Grafikentwicklung_Tracking_Helper_Config_Data extends Mage_Core_Helper_Abs
      */
     protected function isTagManagerDynamicRemarketingEnabledOnProductDetailPage()
     {
-        $value = Mage::getStoreConfig('grafikentwicklung_tracking/tagmanger/dynamic_remarketing_on_categorie_pages_enabled');
+        $value = Mage::getStoreConfig('grafikentwicklung_tracking/tagmanger/dynamic_remarketing_on_product_detail_page_enabled');
         return (bool)$value;
     }
 
