@@ -34,7 +34,7 @@
                             <label>Enable Domain Excludes</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>560</sort_order>
+                            <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -45,7 +45,7 @@
                         <domains_list translate='label'>
                             <label>Domains</label>
                             <frontend_type>textarea</frontend_type>
-                            <sort_order>570</sort_order>
+                            <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -61,7 +61,7 @@
                     <label>Debug</label>
                     <tab>grafikentwicklung</tab>
                     <frontend_type>text</frontend_type>
-                    <sort_order>10</sort_order>
+                    <sort_order>20</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>0</show_in_website>
                     <show_in_store>0</show_in_store>
@@ -73,7 +73,7 @@
                             <label>Enable Checkout Success Debug</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>580</sort_order>
+                            <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -89,7 +89,7 @@
                     <label>Tagmager</label>
                     <tab>grafikentwicklung</tab>
                     <frontend_type>text</frontend_type>
-                    <sort_order>11</sort_order>
+                    <sort_order>30</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
@@ -101,7 +101,7 @@
                             <label>Enable Tagmanger</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>560</sort_order>
+                            <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -112,7 +112,7 @@
                         <container_id translate='label'>
                             <label>Container ID</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>570</sort_order>
+                            <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -121,9 +121,9 @@
                             </comment>
                         </container_id>
                         <order_completed_event_name translate='label'>
-                            <label>Order Completed Event Name</label>
+                            <label>Order completed event name</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>580</sort_order>
+                            <sort_order>30</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -132,12 +132,120 @@
                                 container.
                             </comment>
                         </order_completed_event_name>
+                        <dynamic_remarketing_enabled translate='label'>
+                            <label>Enable dynamic remarketing</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Enable dynamic remarketing
+                            </comment>
+                        </dynamic_remarketing_enabled>
+                        <dynamic_remarketing_event_name translate='label'>
+                            <label>Dynamic remarketing event name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Your dynamic remarketing event name, need to be defined in your Google Tag Manger
+                                container.
+                            </comment>
+                        </dynamic_remarketing_event_name>
+                        <dynamic_remarketing_on_startpage_enabled translate='label'>
+                            <label>Dynamic remarketing enable on startpage</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Enable dynamic remarketing on home/startpage
+                            </comment>
+                        </dynamic_remarketing_on_startpage_enabled>
+                        <dynamic_remarketing_on_categorie_pages_enabled translate='label'>
+                            <label>Dynamic remarketing enable on cms pages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Enable dynamic remarketing on cms pages
+                            </comment>
+                        </dynamic_remarketing_on_categorie_pages_enabled>
+                        <dynamic_remarketing_on_product_detail_page_enabled translate='label'>
+                            <label>Dynamic remarketing enable on product detail page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Enable dynamic remarketing on product detail page
+                            </comment>
+                        </dynamic_remarketing_on_product_detail_page_enabled>
+                        <dynamic_remarketing_on_cms_pages_enabled translate='label'>
+                            <label>Dynamic remarketing enable on categorie pages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Enable dynamic remarketing on categorie pages
+                            </comment>
+                        </dynamic_remarketing_on_cms_pages_enabled>
+                        <dynamic_remarketing_on_search_pages_enabled translate='label'>
+                            <label>Dynamic remarketing enable on search pages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Enable dynamic remarketing on search pages
+                            </comment>
+                        </dynamic_remarketing_on_search_pages_enabled>
+                        <dynamic_remarketing_on_cart_page_enabled translate='label'>
+                            <label>Dynamic remarketing enable on cart page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Enable dynamic remarketing on cart page
+                            </comment>
+                        </dynamic_remarketing_on_cart_page_enabled>
+                        <dynamic_remarketing_on_order_success_enabled translate='label'>
+                            <label>Dynamic remarketing enable on order success page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Enable dynamic remarketing on order success page
+                            </comment>
+                        </dynamic_remarketing_on_order_success_enabled>
                     </fields>
                 </tagmanger>
                 <moebel_de translate="label">
                     <label>Möbel.de Tracking</label>
                     <frontend_type>text</frontend_type>
-                    <sort_order>12</sort_order>
+                    <sort_order>40</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
@@ -149,7 +257,7 @@
                             <label>Enable Möbel.de</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>560</sort_order>
+                            <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -161,7 +269,7 @@
                         <tracking_key translate='label'>
                             <label>Tracking Key</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>570</sort_order>
+                            <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -174,7 +282,7 @@
                 <shopzilla translate="label">
                     <label>Shopzilla Tracking</label>
                     <frontend_type>text</frontend_type>
-                    <sort_order>13</sort_order>
+                    <sort_order>50</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
@@ -186,7 +294,7 @@
                             <label>Enable Shopzilla</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>560</sort_order>
+                            <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -198,7 +306,7 @@
                         <merchant_id translate='label'>
                             <label>Merchant id</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>570</sort_order>
+                            <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -211,7 +319,7 @@
                 <sales_tracking translate="label">
                     <label>Sales Tracking (in log file and / or per mail)</label>
                     <frontend_type>text</frontend_type>
-                    <sort_order>14</sort_order>
+                    <sort_order>60</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>0</show_in_website>
                     <show_in_store>0</show_in_store>
@@ -237,7 +345,7 @@
                             <label>Enable Logfile</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>15</sort_order>
+                            <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -248,7 +356,7 @@
                         <log_file_name translate='label'>
                             <label>Logfile name</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>20</sort_order>
+                            <sort_order>30</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>s
                             <show_in_store>0</show_in_store>
@@ -257,12 +365,11 @@
                                 For example "salestracking.log".
                             </comment>
                         </log_file_name>
-
                         <send_mail_enabled translate='label'>
                             <label>Enable Send Mail</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>30</sort_order>
+                            <sort_order>40</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
@@ -363,7 +470,7 @@
                            <label>Enable Google</label>
                            <frontend_type>select</frontend_type>
                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                           <sort_order>120</sort_order>
+                           <sort_order>110</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>
                            <show_in_store>0</show_in_store>
@@ -375,7 +482,7 @@
                        <google_referer translate='label'>
                            <label>Google referer</label>
                            <frontend_type>text</frontend_type>
-                           <sort_order>130</sort_order>
+                           <sort_order>120</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>
                            <show_in_store>0</show_in_store>
@@ -391,7 +498,7 @@
                            <label>Enable Möbel.de</label>
                            <frontend_type>select</frontend_type>
                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                           <sort_order>140</sort_order>
+                           <sort_order>130</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>
                            <show_in_store>0</show_in_store>
@@ -403,7 +510,7 @@
                        <moebel_referer translate='label'>
                            <label>Möbel.de referer</label>
                            <frontend_type>text</frontend_type>
-                           <sort_order>150</sort_order>
+                           <sort_order>140</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>
                            <show_in_store>0</show_in_store>
@@ -418,7 +525,7 @@
                            <label>Enable Preisroboter</label>
                            <frontend_type>select</frontend_type>
                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                           <sort_order>160</sort_order>
+                           <sort_order>150</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>
                            <show_in_store>0</show_in_store>
@@ -430,7 +537,7 @@
                        <preisroboter_referer translate='label'>
                            <label>Preisroboter referer</label>
                            <frontend_type>text</frontend_type>
-                           <sort_order>170</sort_order>
+                           <sort_order>160</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>
                            <show_in_store>0</show_in_store>
@@ -445,7 +552,7 @@
                            <label>Enable Shopwahl (leGuide)</label>
                            <frontend_type>select</frontend_type>
                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                           <sort_order>180</sort_order>
+                           <sort_order>170</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>
                            <show_in_store>0</show_in_store>
@@ -457,7 +564,7 @@
                        <shopwahl_referer translate='label'>
                            <label>Shopwahl referer</label>
                            <frontend_type>text</frontend_type>
-                           <sort_order>190</sort_order>
+                           <sort_order>160</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>
                            <show_in_store>0</show_in_store>
@@ -472,7 +579,7 @@
                            <label>Enable Shopzilla</label>
                            <frontend_type>select</frontend_type>
                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                           <sort_order>200</sort_order>
+                           <sort_order>190</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>
                            <show_in_store>0</show_in_store>
@@ -484,7 +591,7 @@
                        <shopzilla_referer translate='label'>
                            <label>Shopzilla referer</label>
                            <frontend_type>text</frontend_type>
-                           <sort_order>210</sort_order>
+                           <sort_order>200</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>
                            <show_in_store>0</show_in_store>
@@ -500,7 +607,7 @@
                <emty_cart_tracking translate="label">
                    <label>Empty cart tracking (in log file and / or per mail)</label>
                    <frontend_type>text</frontend_type>
-                   <sort_order>15</sort_order>
+                   <sort_order>70</sort_order>
                    <show_in_default>1</show_in_default>
                    <show_in_website>0</show_in_website>
                    <show_in_store>0</show_in_store>
@@ -525,7 +632,7 @@
                            <label>Enable Logfile</label>
                            <frontend_type>select</frontend_type>
                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                           <sort_order>15</sort_order>
+                           <sort_order>20</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>
                            <show_in_store>0</show_in_store>
@@ -536,7 +643,7 @@
                        <log_file_name translate='label'>
                            <label>Logfile name</label>
                            <frontend_type>text</frontend_type>
-                           <sort_order>20</sort_order>
+                           <sort_order>30</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>s
                            <show_in_store>0</show_in_store>
@@ -550,7 +657,7 @@
                            <label>Enable Send Mail</label>
                            <frontend_type>select</frontend_type>
                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                           <sort_order>30</sort_order>
+                           <sort_order>40</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>0</show_in_website>
                            <show_in_store>0</show_in_store>
@@ -563,7 +670,7 @@
                            <label>Email Template</label>
                            <frontend_type>select</frontend_type>
                            <source_model>adminhtml/system_config_source_email_template</source_model>
-                           <sort_order>40</sort_order>
+                           <sort_order>50</sort_order>
                            <show_in_default>1</show_in_default>
                            <show_in_website>1</show_in_website>
                            <show_in_store>1</show_in_store>
@@ -573,7 +680,7 @@
                             <label>Mail from (Mailaddress)</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_email_identity</source_model>
-                            <sort_order>50</sort_order>
+                            <sort_order>60</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>s
                             <show_in_store>0</show_in_store>
@@ -585,7 +692,7 @@
                         <mail_subject translate='label'>
                             <label>Mail Subject</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>60</sort_order>
+                            <sort_order>70</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>s
                             <show_in_store>0</show_in_store>
@@ -598,7 +705,7 @@
                             <label>Mail to (Mailaddress)</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_email_identity</source_model>
-                            <sort_order>70</sort_order>
+                            <sort_order>80</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>s
                             <show_in_store>0</show_in_store>
@@ -611,7 +718,7 @@
                             <label>Mail to CC (Mailaddress)</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_email_identity</source_model>
-                            <sort_order>80</sort_order>
+                            <sort_order>90</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>s
                             <show_in_store>0</show_in_store>

@@ -51,7 +51,7 @@ class Grafikentwicklung_Tracking_Helper_Config_Data extends Mage_Core_Helper_Abs
     /**
      * @return bool
      */
-    public function isTagManagerEnabled()
+    protected function isTagManagerEnabled()
     {
         $value = Mage::getStoreConfig('grafikentwicklung_tracking/tagmanger/enabled');
         return (bool)$value;
@@ -82,7 +82,97 @@ class Grafikentwicklung_Tracking_Helper_Config_Data extends Mage_Core_Helper_Abs
     /**
      * @return bool
      */
-    public function isMoebelDeEnabled()
+    protected function isTagManagerDynamicRemarketingEnabled()
+    {
+        $value = Mage::getStoreConfig('grafikentwicklung_tracking/tagmanger/dynamic_remarketing_enabled');
+        return (bool)$value;
+    }
+
+
+    /**
+     * @return string|null
+     */
+    public function getTagManagerDynamicRemarketingEventName()
+    {
+        $value = Mage::getStoreConfig('grafikentwicklung_tracking/tagmanger/dynamic_remarketing_event_name');
+        return $value;
+    }
+
+
+    /**
+     * @return bool
+     */
+    protected function isTagManagerDynamicRemarketingEnabledOnStartPage()
+    {
+        $value = Mage::getStoreConfig('grafikentwicklung_tracking/tagmanger/dynamic_remarketing_on_startpage_enabled');
+        return (bool)$value;
+    }
+
+
+    /**
+     * @return bool
+     */
+    protected function isTagManagerDynamicRemarketingEnabledOnCategoriePages()
+    {
+        $value = Mage::getStoreConfig('grafikentwicklung_tracking/tagmanger/dynamic_remarketing_on_categorie_pages_enabled');
+        return (bool)$value;
+    }
+
+
+    /**
+     * @return bool
+     */
+    protected function isTagManagerDynamicRemarketingEnabledOnProductDetailPage()
+    {
+        $value = Mage::getStoreConfig('grafikentwicklung_tracking/tagmanger/dynamic_remarketing_on_categorie_pages_enabled');
+        return (bool)$value;
+    }
+
+
+    /**
+     * @return bool
+     */
+    protected function isTagManagerDynamicRemarketingEnabledOnCmsPages()
+    {
+        $value = Mage::getStoreConfig('grafikentwicklung_tracking/tagmanger/dynamic_remarketing_on_cms_pages_enabled');
+        return (bool)$value;
+    }
+
+
+    /**
+     * @return bool
+     */
+    protected function isTagManagerDynamicRemarketingEnabledOnSearchPages()
+    {
+        $value = Mage::getStoreConfig('grafikentwicklung_tracking/tagmanger/dynamic_remarketing_on_search_pages_enabled');
+        return (bool)$value;
+    }
+
+
+    /**
+     * @return bool
+     */
+    protected function isTagManagerDynamicRemarketingEnabledOnCartPage()
+    {
+        $value = Mage::getStoreConfig('grafikentwicklung_tracking/tagmanger/dynamic_remarketing_on_cart_page_enabled');
+        return (bool)$value;
+    }
+
+
+    /**
+     * @return bool
+     */
+    protected function isTagManagerDynamicRemarketingEnabledOnOrderSuccessPage()
+    {
+        $value = Mage::getStoreConfig('grafikentwicklung_tracking/tagmanger/dynamic_remarketing_on_order_success_enabled');
+        return (bool)$value;
+    }
+
+
+    /**
+     * @return bool
+     */
+    protected function isMoebelDeEnabled()
     {
         $value = Mage::getStoreConfig('grafikentwicklung_tracking/moebel_de/enabled');
         return (bool)$value;
@@ -102,7 +192,7 @@ class Grafikentwicklung_Tracking_Helper_Config_Data extends Mage_Core_Helper_Abs
     /**
      * @return bool
      */
-    public function isShopZillaEnabled()
+    protected function isShopZillaEnabled()
     {
         $value = Mage::getStoreConfig('grafikentwicklung_tracking/shopzilla/enabled');
         return (bool)$value;

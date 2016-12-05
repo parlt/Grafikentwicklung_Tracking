@@ -26,7 +26,7 @@ class Grafikentwicklung_Tracking_Block_Shopzilla_Body extends Grafikentwicklung_
     public function getShopZillaSalesTrackingData()
     {
         /** @var Grafikentwicklung_Tracking_Model_Salestracking $model */
-        $model = $this->getModelWithLoggedDataBySession();
+        $model = $this->getModelWithLoggedDataBySession(Grafikentwicklung_Tracking_Model_Salestracking::TYPE_CHECKOUT);
         if ($model) {
             $data = [
                 'cust_type' => !empty($model->getData('transaction_is_new_customer')) ? '1' : '0',

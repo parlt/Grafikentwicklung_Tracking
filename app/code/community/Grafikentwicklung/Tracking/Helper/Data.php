@@ -32,11 +32,20 @@ class Grafikentwicklung_Tracking_Helper_Data extends Grafikentwicklung_Tracking_
 
 
     /**
-     * @return Mage_Adminhtml_Model_Session
+     * @return bool
      */
-    private function getAdminSession()
+    public function isGrafikentwicklungCustomoptionsEnabled()
     {
-        return Mage::getSingleton('adminhtml/session');
+        return Mage::helper('core')->isModuleEnabled('Grafikentwicklung_Customoptions');
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function isAmastyXlandigEnabled()
+    {
+        return Mage::helper('core')->isModuleEnabled('Amasty_Xlanding');
     }
 
 
@@ -164,8 +173,8 @@ class Grafikentwicklung_Tracking_Helper_Data extends Grafikentwicklung_Tracking_
             $excludedDomains = $this->getExcludedDomains();
 
             /** @var string $excludedDomain */
-            foreach ($excludedDomains as $excludedDomain){
-                if (strpos($currentDomain, $excludedDomain) !== false){
+            foreach ($excludedDomains as $excludedDomain) {
+                if (strpos($currentDomain, $excludedDomain) !== false) {
                     return true;
                 }
             }
@@ -228,6 +237,268 @@ class Grafikentwicklung_Tracking_Helper_Data extends Grafikentwicklung_Tracking_
         return true;
     }
 
+
+    /**
+     * @return bool
+     */
+    public function canUseDynamicRemarketing()
+    {
+        if (!$this->canUseTagManager()) {
+            return false;
+        }
+
+        if (!$this->isTagManagerDynamicRemarketingEnabled()) {
+            return false;
+        }
+
+        if (!$this->getTagManagerDynamicRemarketingEventName()) {
+            return false;
+        }
+
+        return true;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function canUseTagManagerDynamicRemarketingOnCheckoutSuccessPage()
+    {
+        if (!$this->canUseDynamicRemarketing()) {
+            return false;
+        }
+
+        if (!$this->isCheckoutSuccessPage()) {
+            return false;
+        }
+
+        if (!$this->isTagManagerDynamicRemarketingEnabledOnOrderSuccessPage()) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * @return bool
+     */
+    public function canUseTagManagerDynamicRemarketingOnStartPage()
+    {
+        if (!$this->canUseDynamicRemarketing()) {
+            return false;
+        }
+
+        if (!$this->isStartPage()) {
+            return false;
+        }
+
+        if (!$this->isTagManagerDynamicRemarketingEnabledOnStartPage()) {
+            return false;
+        }
+
+        return true;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function canUseTagManagerDynamicRemarketingOnCategoriePages()
+    {
+        if (!$this->canUseDynamicRemarketing()) {
+            return false;
+        }
+
+        if (!$this->isCategoryPage()) {
+            return false;
+        }
+
+        if (!$this->isTagManagerDynamicRemarketingEnabledOnCategoriePages()) {
+            return false;
+        }
+
+        return true;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function canUseTagManagerDynamicRemarketingOnProductDetailPage()
+    {
+        if (!$this->canUseDynamicRemarketing()) {
+            return false;
+        }
+
+        if (!$this->isProductDetailPage()) {
+            return false;
+        }
+
+        if (!$this->isTagManagerDynamicRemarketingEnabledOnProductDetailPage()) {
+            return false;
+        }
+
+        return true;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function canUseTagManagerDynamicRemarketingOnCmsPages()
+    {
+        if (!$this->canUseDynamicRemarketing()) {
+            return false;
+        }
+
+        if (!$this->isCmsPage()) {
+            return false;
+        }
+
+        if (!$this->isTagManagerDynamicRemarketingEnabledOnCmsPages()) {
+            return false;
+        }
+
+        return true;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function canUseTagManagerDynamicRemarketingOnSearchPages()
+    {
+        if (!$this->canUseDynamicRemarketing()) {
+            return false;
+        }
+
+        if (!$this->isSearchPage()) {
+            return false;
+        }
+
+        if (!$this->isTagManagerDynamicRemarketingEnabledOnSearchPages()) {
+            return false;
+        }
+
+        return true;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function canUseTagManagerDynamicRemarketingOnCartPage()
+    {
+        if (!$this->canUseDynamicRemarketing()) {
+            return false;
+        }
+
+        if (!$this->isCartPage()) {
+            return false;
+        }
+
+        if (!$this->isTagManagerDynamicRemarketingEnabledOnCartPage()) {
+            return false;
+        }
+
+        return true;
+    }
+
+
+    /**
+     * @return bool
+     */
+    private function isCategoryPage()
+    {
+        $controller = $this->getControllerName();
+        if ($controller === 'category') {
+            return true;
+        }
+        return false;
+    }
+
+
+    /**
+     * @return bool
+     */
+    private function isProductDetailPage()
+    {
+        $controller = $this->getControllerName();
+        if ($controller === 'product') {
+            return true;
+        }
+        return false;
+    }
+
+
+    /**
+     * @return bool
+     */
+    private function isStartPage()
+    {
+        $controller = $this->getControllerName();
+        if ($controller === 'index') {
+            return true;
+        }
+        return false;
+    }
+
+
+    /**
+     * @return bool
+     */
+    private function isCmsPage()
+    {
+        $controller = $this->getControllerName();
+        if ($controller === 'page') {
+            return true;
+        }
+        return false;
+    }
+
+
+    /**
+     * @return bool
+     */
+    private function isCartPage()
+    {
+        $controller = $this->getControllerName();
+        if ($controller === 'cart') {
+            return true;
+        }
+        return false;
+    }
+
+
+    /**
+     * @return bool
+     */
+    private function isSearchPage()
+    {
+        $controller = $this->getControllerName();
+        if ($controller === 'result') {
+            return true;
+        }
+        return false;
+    }
+
+
+    /**
+     * @return bool
+     */
+    private function isOrderSuccessPage()
+    {
+        $controller = $this->getControllerName();
+        return false;
+    }
+
+    /**
+     * @return string
+     */
+    private function getControllerName()
+    {
+        return Mage::app()->getFrontController()->getRequest()->getControllerName();
+    }
 
     /**
      * @return bool

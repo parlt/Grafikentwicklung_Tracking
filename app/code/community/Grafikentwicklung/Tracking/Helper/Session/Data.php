@@ -40,6 +40,15 @@ class Grafikentwicklung_Tracking_Helper_Session_Data extends Mage_Core_Helper_Ab
 
 
     /**
+     * @return Mage_Checkout_Helper_Cart
+     */
+    public function getCartHelper()
+    {
+        return Mage::helper('checkout/cart');
+    }
+
+
+    /**
      * @return string
      */
     public function getStoreCode()
@@ -201,7 +210,8 @@ class Grafikentwicklung_Tracking_Helper_Session_Data extends Mage_Core_Helper_Ab
     /**
      * @return array
      */
-    public function getSessionDataAsArray(){
+    public function getSessionDataAsArray()
+    {
         return [
             'store_code' => $this->getStoreCode(),
             'session_id' => $this->getCustomerSessionId(),

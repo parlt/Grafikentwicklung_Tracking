@@ -12,23 +12,102 @@
  */
 ?>
 <?php
+
 if ($this->getTrackingHelper()->canUseTagManager()) { ?>
     <!-- Tag Manager Tracking (datalayer) Begin -->
     <script>
         window.dataLayer = window.dataLayer || [];
+        <?php if ($this->getTrackingHelper()->canUseTagManagerOnCheckoutSuccessPage()) {
+        $trackingData = $this->getTagManagerSalesTrackingData(Grafikentwicklung_Tracking_Model_Salestracking::TYPE_CHECKOUT);?>
         dataLayer.push({
-            <?php if ($this->getTrackingHelper()->canUseTagManagerOnCheckoutSuccessPage()){
-            $trackingData = $this->getTagManagerSalesTrackingData();
-            ?>
-            'event': '<?php echo $this->getTrackingHelper()->getTagManagerOrderCompletedEventName()?>',
+            'event': '<?php echo $this->getTrackingHelper()->getTagManagerOrderCompletedEventName(); ?>',
             'transactionId': '<?php echo $trackingData['transactionId'];?>',
             /*  'transactionAffiliation': 'Acme',*/
             'transactionTotal': <?php echo $trackingData['transactionTotal'];?>,
             'transactionTax': <?php echo $trackingData['transactionTax'];?>,
             'transactionShipping': <?php echo $trackingData['transactionShipping'];?>,
             'transactionProducts': <?php echo $trackingData['transactionProducts'];?>
-            <?php }?>
         });
+        <?php if ($this->getTrackingHelper()->canUseTagManagerDynamicRemarketingOnCheckoutSuccessPage()) {?>
+        dataLayer.push({
+            'event': '<?php echo $this->getTrackingHelper()->getTagManagerDynamicRemarketingEventName(); ?>',
+            'google_tag_params': [{
+                'ecomm_prodid': <?php echo $trackingData['transactionSkus'];?>,
+                'ecomm_pagetype': 'purchase',
+                'ecomm_totalvalue': <?php echo $trackingData['transactionTotal'];?>
+            }]
+        });
+        <?php }
+        }?>
+        <?php if ($this->getTrackingHelper()->canUseTagManagerDynamicRemarketingOnCartPage()) {
+        $trackingData = $this->getTagManagerSalesTrackingData(Grafikentwicklung_Tracking_Model_Salestracking::TYPE_CART);?>
+        dataLayer.push({
+            'event': '<?php echo $this->getTrackingHelper()->getTagManagerDynamicRemarketingEventName(); ?>',
+            'google_tag_params': [{
+                'ecomm_prodid': <?php echo $trackingData['transactionSkus'];?>,
+                'ecomm_pagetype': 'cart',
+                'ecomm_totalvalue': <?php echo $trackingData['transactionTotal'];?>
+            }]
+        });
+        <?php }?>
+        <?php if ($this->getTrackingHelper()->canUseTagManagerDynamicRemarketingOnSearchPages()) {
+        $trackingData = $this->getTagManagerSalesTrackingData(Grafikentwicklung_Tracking_Model_Salestracking::TYPE_SEARCH);?>
+        dataLayer.push({
+            'event': '<?php echo $this->getTrackingHelper()->getTagManagerDynamicRemarketingEventName(); ?>',
+            'google_tag_params': [{
+                'ecomm_prodid': <?php echo $trackingData['transactionSkus'];?>,
+                'ecomm_pagetype': 'searchresults',
+                'ecomm_totalvalue': <?php echo $trackingData['transactionTotal'];?>
+            }]
+        });
+        <?php }?>
+        <?php if ($this->getTrackingHelper()->canUseTagManagerDynamicRemarketingOnProductDetailPage()) {
+        $trackingData = $this->getTagManagerSalesTrackingData(Grafikentwicklung_Tracking_Model_Salestracking::TYPE_PRODUCT);?>
+        dataLayer.push({
+            'event': '<?php echo $this->getTrackingHelper()->getTagManagerDynamicRemarketingEventName(); ?>',
+            'google_tag_params': [{
+                'ecomm_prodid': '<?php echo $trackingData['transactionSkus'];?>',
+                'ecomm_pagetype': 'product',
+                'ecomm_totalvalue': <?php echo $trackingData['transactionTotal'];?>,
+                'ecomm_pname': '<?php echo $trackingData['productName'];?>',
+                'ecomm_pcat': '<?php echo $trackingData['category'];?>'
+            }]
+        });
+        <?php }?>
+        <?php if ($this->getTrackingHelper()->canUseTagManagerDynamicRemarketingOnCategoriePages()) {
+        $trackingData = $this->getTagManagerSalesTrackingData(Grafikentwicklung_Tracking_Model_Salestracking::TYPE_CATEGORY);?>
+        dataLayer.push({
+            'event': '<?php echo $this->getTrackingHelper()->getTagManagerDynamicRemarketingEventName(); ?>',
+            'google_tag_params': [{
+                'ecomm_prodid': <?php echo $trackingData['transactionSkus'];?>,
+                'ecomm_pagetype': 'category',
+                'ecomm_totalvalue': <?php echo $trackingData['transactionTotal'];?>,
+                'ecomm_pcat': '<?php echo $trackingData['category'];?>'
+            }]
+        });
+        <?php }?>
+        <?php if ($this->getTrackingHelper()->canUseTagManagerDynamicRemarketingOnCmsPages()) {
+        $trackingData = $this->getTagManagerSalesTrackingData(Grafikentwicklung_Tracking_Model_Salestracking::TYPE_CMS);?>
+        dataLayer.push({
+            'event': '<?php echo $this->getTrackingHelper()->getTagManagerDynamicRemarketingEventName(); ?>',
+            'google_tag_params': [{
+                'ecomm_prodid': <?php echo $trackingData['transactionSkus'];?>,
+                'ecomm_pagetype': 'siteview',
+                'ecomm_totalvalue':<?php echo $trackingData['transactionTotal'];?>
+            }]
+        });
+        <?php }?>
+        <?php if ($this->getTrackingHelper()->canUseTagManagerDynamicRemarketingOnStartPage()) {
+        $trackingData = $this->getTagManagerSalesTrackingData(Grafikentwicklung_Tracking_Model_Salestracking::TYPE_START);?>
+        dataLayer.push({
+            'event': '<?php echo $this->getTrackingHelper()->getTagManagerDynamicRemarketingEventName(); ?>',
+            'google_tag_params': [{
+                'ecomm_prodid': <?php echo $trackingData['transactionSkus'];?>,
+                'ecomm_pagetype': 'siteview',
+                'ecomm_totalvalue': <?php echo $trackingData['transactionTotal'];?>
+            }]
+        });
+        <?php }?>
     </script>
     <!-- Tag Manager Tracking (datalayer) End-->
 <?php } ?>

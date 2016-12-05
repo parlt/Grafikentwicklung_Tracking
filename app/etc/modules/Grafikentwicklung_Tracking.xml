@@ -4,10 +4,6 @@
         <Grafikentwicklung_Tracking>
             <active>true</active>
             <codePool>community</codePool>
-            <depends>
-                <Grafikentwicklung_Customizing/>
-                <MageWorx_CustomOptions/>
-            </depends>
         </Grafikentwicklung_Tracking>
     </modules>
 </config>

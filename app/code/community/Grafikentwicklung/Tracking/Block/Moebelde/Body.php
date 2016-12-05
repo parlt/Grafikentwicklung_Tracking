@@ -8,9 +8,9 @@
  */
 
 /**
- * Class Grafikentwicklung_Tracking_Block_MoebelDe_Body
+ * Class Grafikentwicklung_Tracking_Block_Moebelde_Body
  */
-class Grafikentwicklung_Tracking_Block_MoebelDe_Body extends Grafikentwicklung_Tracking_Block_Common_Abstract
+class Grafikentwicklung_Tracking_Block_Moebelde_Body extends Grafikentwicklung_Tracking_Block_Common_Abstract
 {
 
     protected function _construct()
@@ -23,10 +23,10 @@ class Grafikentwicklung_Tracking_Block_MoebelDe_Body extends Grafikentwicklung_T
     /**
      * @return array
      */
-    public function getMoebelDeSalesTrackingData()
+    public function getMoebeldeSalesTrackingData()
     {
         /** @var Grafikentwicklung_Tracking_Model_Salestracking $model */
-        $model = $this->getModelWithLoggedDataBySession();
+        $model = $this->getModelWithLoggedDataBySession(Grafikentwicklung_Tracking_Model_Salestracking::TYPE_CHECKOUT);
         if ($model) {
 
             /** @var int|float $calculatedNetto */
