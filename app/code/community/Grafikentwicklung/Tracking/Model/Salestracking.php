@@ -267,15 +267,15 @@ class Grafikentwicklung_Tracking_Model_Salestracking extends Grafikentwicklung_T
      */
     public function getCurrentDataByProduct()
     {
-        /** @var Grafikentwicklung_Customizing_Model_Catalog_Product|Mage_Model_Catalog_Product $currentProduct */
+        /** @var Grafikentwicklung_Customizing_Model_Catalog_Product|Mage_Catalog_Model_Product $currentProduct */
         $currentProduct = Mage::registry('current_product');
-
-        if (!$currentProduct){
-            return $this;
-        }
 
         /** @var Grafikentwicklung_Customizing_Model_Catalog_Category|Mage_Catalog_Model_Category $currentCategory */
         $currentCategory = Mage::registry('current_category');
+
+        if (!$currentProduct || !$currentCategory) {
+            return $this;
+        }
 
         if ($this->getTrackingHelper()->isGrafikentwicklungCustomoptionsEnabled()) {
             $currentProduct->setCustomOptionsHandlingEnabled();
