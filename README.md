@@ -1,7 +1,7 @@
 # Grafikentwicklung_Tracking
 Magento 1 Google Tagmanager and Sales Tracking Extension:
 - Empty Cart Tracking
-- Sales Tracking by Shopping Portal (preisroboter, shopzilla, möbel.de, shopwahl, billiger.de, google merchant)
+- Sales Tracking by Shopping Portal (preisroboter, shopzilla, möebel.de, shopwahl, billiger.de, google merchant)
 - Google Tagmanger implementation
 - Remarketing (with Google Tagmanger) on Search, CMS, Product Detail, Category, Cart and Order Success Pages
 - Möbel.de and Shopzilla Transaction Tracking (sends transaction data to Möbel.de and Shopzilla if enabled)

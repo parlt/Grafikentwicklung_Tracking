@@ -413,6 +413,10 @@ class Grafikentwicklung_Tracking_Model_Salestracking extends Grafikentwicklung_T
      */
     protected function getCategoryPathByCategory($category)
     {
+        if (!$category){
+            return '';
+        }
+
         /** @var string $path */
         $path = $category->getPath();
 
